@@ -6,8 +6,9 @@
   "scripts": {
     "server": "nodemon --ignore pages",
     "pages": "cd pages && npm run build-w",
+    "setup": "npm install && cd pages && npm install",
     "dev": "concurrently --kill-others \"npm run server\" \"npm run pages\"",
-    "deploy": "node index.js"
+    "deploy": "cd pages && npm run build && cd .. && node index.js"
   },
   "author": "narad-muni",
   "license": "ISC",
